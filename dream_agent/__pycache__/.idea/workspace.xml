@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ce9e3ef-607e-4579-838f-dc79482b4178" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1VCvLlq2autIwa4wuLboKdj6nDH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Speciale/Speciale" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="Python.Replicationsmodel">
+    <configuration name="Replicationsmodel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="__pycache__" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Speciale" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Speciale/Replicationsmodel" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Speciale" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="__pycache__" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Speciale" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Speciale/Speciale" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dream_agent" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="__pycache__" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../dream_agent.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tut01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="__pycache__" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../tut01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Replicationsmodel" />
+        <item itemvalue="Python.dream_agent" />
+        <item itemvalue="Python.Speciale" />
+        <item itemvalue="Python.tut01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ce9e3ef-607e-4579-838f-dc79482b4178" name="Default Changelist" comment="" />
+      <created>1576769837139</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576769837139</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="757" y="377" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578348125132">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="757" y="377" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1578348125132" />
+    <state x="1066" y="525" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579642105008">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1066" y="525" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1579642105008" />
+    <state x="1060" y="460" key="FileChooserDialogImpl" timestamp="1578348342685">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1060" y="460" key="FileChooserDialogImpl/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1578348342685" />
+    <state width="1828" height="313" key="GridCell.Tab.0.bottom" timestamp="1579992730645">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1828" height="313" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1579992730645" />
+    <state width="1828" height="313" key="GridCell.Tab.0.center" timestamp="1579992730645">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1828" height="313" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1579992730645" />
+    <state width="1828" height="313" key="GridCell.Tab.0.left" timestamp="1579992730645">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1828" height="313" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1579992730645" />
+    <state width="1828" height="313" key="GridCell.Tab.0.right" timestamp="1579992730645">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1828" height="313" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1579992730645" />
+    <state x="990" y="244" key="SettingsEditor" timestamp="1579642308909">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="990" y="244" key="SettingsEditor/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1579642308909" />
+    <state x="999" y="497" key="com.intellij.ide.util.TipDialog" timestamp="1584631787971">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="999" y="497" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1584631787971" />
+    <state x="999" y="497" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1584520565492" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../Speciale/Replicationsmodel</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
