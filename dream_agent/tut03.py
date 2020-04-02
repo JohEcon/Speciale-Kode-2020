@@ -55,7 +55,8 @@ class Person(Agent):
             self._age += 1                                      #3
             if random.random() < Settings.probability_of_death:
                 self.remove_this_agent()                        #4
-
+        elif id_event == Event.stop:                                  #3
+            print("Age: {}".format(self._age))
     def get_age(self):
         return self._age
 
@@ -131,10 +132,10 @@ class Simulation(Agent):
 # We can now run the model
 #--------------------------
 
-Settings.number_of_agents = 500
-Settings.number_of_periods = 1000
-Settings.probability_of_death = 0.01
-Settings.number_of_new_born = 5
+Settings.number_of_agents = 1
+Settings.number_of_periods = 30
+Settings.probability_of_death = 0
+Settings.number_of_new_born = 0
 
 Simulation()
 
