@@ -40,7 +40,12 @@ class Households(Agent):
 
     def event_proc(self, id_event):
         if id_event == Event.update:  # 2
-            self._Age += 1
+            if Simulation.time % Settings.periods_in_year == 0:
+                self._Age += 1
+
+            if random.uniform(0,1)<dict_death[self._Age]:
+                print("death of agent")
+                self.remove_this_agent()
 
         elif id_event == Event.stop:  # 3
             print(repr(self))
@@ -48,13 +53,13 @@ class Households(Agent):
 class Settings: pass
 Settings.number_of_agents=0
 Settings.number_of_periods=0
-Settings.probability_of_death=0
-Settings.number_of_new_born=0
+Settings.periods_in_year=0
+Settings.fraction_of_new_born=0
 
 class Simulation(Agent):
     # Static fields
     Household = Agent()
-    time = 0
+    time = 1
 
     def __init__(self):
         super().__init__()
@@ -85,16 +90,17 @@ class Simulation(Agent):
 
         elif id_event == Event.update:  # 10
                 # Adding new born persons to the population
-            for i in range(Settings.number_of_new_born):
+            for i in range(int(round(Settings.fraction_of_new_born*Simulation.Household.get_number_of_agents()))):
                 Households(Simulation.Household)
+                print("agent added")
             super().event_proc(id_event)
         else:
                 # All other events are sendt to decendants
             super().event_proc(id_event)
 
-Settings.number_of_agents=1
-Settings.number_of_periods=10
-Settings.probability_of_death=0
-Settings.number_of_new_born=1
+Settings.number_of_agents=10
+Settings.number_of_periods=25
+Settings.fraction_of_new_born=0.1
+Settings.periods_in_year=12
 Simulation()
 
