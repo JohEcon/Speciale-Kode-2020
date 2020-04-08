@@ -65,6 +65,7 @@ class Statistics(Agent):
 
         elif id_event == Event.stop:                    #2
             self._file.close()
+            print(Settings.out_file)
 
         elif id_event == Event.period_start:            #3
             print(Simulation.population.get_number_of_agents())
@@ -128,12 +129,12 @@ class Simulation(Agent):
 #--------------------------
 
 Settings.number_of_agents = 500
-Settings.number_of_periods = 1000
+Settings.number_of_periods = 10
 Settings.probability_of_death = 0.01
 Settings.number_of_new_born = 5
-Settings.out_file = "test.txt"
+Settings.out_file = "1"
 
 Simulation()
-
+print(Settings.out_file)
 # You can find output from the simulation in test.txt
 # Do not write too much to files. It is very time consuming.

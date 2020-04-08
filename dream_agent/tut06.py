@@ -164,12 +164,12 @@ class Simulation(Agent):
 
 # We can now run the model
 #--------------------------
-Settings.number_of_agents = 1000
-Settings.number_of_periods = 10000
+Settings.number_of_agents = 10
+Settings.number_of_periods = 1000
 Settings.out_file = "test.txt"
 
 Settings.graphics_show = True
-Settings.graphics_periods_per_pic = 25
+Settings.graphics_periods_per_pic = 2
 
 Settings.loot_share = 0.25 # If you win, this is the share of the others wealth you get
 Settings.attack_probability = 0.1
