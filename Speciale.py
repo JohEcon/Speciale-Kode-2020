@@ -1,66 +1,181 @@
 # We import the DREAM agent
-"""from dream_agent import Agent"""
-# We define the Traders object
-from mesa import Agent, Model
+from dream_agent import Agent
+from Dictionaries import *
 
+import random
+import numpy
 
-class HousingModel(Model):
-    """A model with some number of agents."""
-    def __init__(self, N, width, height):
-        self.num_HH = N
-        self.num_H = N
-        self.schedule = RandomActivation(self)
-        # Create agents
-        for i in range(self.num_HH):
-            a = HousingAgent(i, self)
-            self.schedule.add(a)
-       
-        for i in range(self.num_H):
-            b = HousingAgent(i, self)
-            self.schedule.add(b)
+# We allocate an agent object
+Model = Agent()
 
+class Settings: pass
+Settings.number_of_agents=10
+Settings.number_of_periods=600
+Settings.fraction_of_new_born=0.0
+Settings.periods_in_year=12
+Settings.starting_income=9500
+Settings.starting_age= 20
 
-    def step(self):
-        self.schedule.step()
-
-class HousingAgent(Agent):
-    """ An agent with fixed initial wealth."""
-    def __init__(self, unique_id, model):
-        super().__init__(unique_id, model)
-        self.wealth = 1
-
-    def move(self):
-        
-
-    def Buy_home(self):
-       
-
-    def step(self):
-        self.move()
-        if self.wealth > 0:
-            self.give_money()
-
-
-# We define the Statistics object
-
-
-
-
-# We add our new objects to the model:
-Model.add_agent(Statistics())
-Model.add_agent(LOB())
-Model.add_agent(Traders())
-
-# We add agents to our Traders
-
-
-
-#we print the total number of agents in our model
-print(Model.get_total_number_of_agents())
-
-
+# We create an event class
 class Event: pass
-Event.start = 1         # The model starts
-Event.stop = 2          # The model stops
-Event.update = 3        # Agent behavior
+Event.start = 1  # The model starts
+Event.stop = 2  # The model stops
+Event.update = 3  # Agent behavior
+
+# We define the Households object
+deaths_period = []
+
+class Households(Agent):
+    def __init__(self, parent=None, Wealth=0, Pdeath=0, Income=Settings.starting_income, Age=Settings.starting_age):
+        super().__init__(parent)
+        self._Wealth = Wealth
+        self._Income = Income
+        self._Age = Age
+        self._Pdeath = Pdeath
+
+
+    # Report ID
+    # Report Wealth
+    def get_Wealth(self):
+        return self._Wealth
+
+     # Report Income
+    def get_Income(self):
+        return self._Income
+
+    # Report Age
+    def get_age(self):
+        return self._Age
+
+    # We define the string representation of the class objects
+    def __repr__(self):
+        return "Household(ID: {}, Wealth: {}, Income: {}, Age: {}, p-death: {} )".format(self._id, self._Wealth, self._Income, self._Age, self._Pdeath)
+
+    def event_proc(self, id_event):
+        if id_event == Event.update:  # 2
+            #add income to total wealth
+            self._Wealth += self._Income
+
+            #every year, increase age by 1 and update income
+            if Simulation.time % Settings.periods_in_year == 0:
+                self._Age += 1
+                self._Pdeath = 0.0005+10**(-4.2+0.038*self._Age)
+                self._Income += dict_income_raise[get_index(self._Age)]
+                self._Income +=self._Income*(numpy.random.normal(0, 0.113)+numpy.random.normal(0, 0.155))
+
+                #if income is too low and household is young, set income to SU-level
+                if self._Age <30 and self._Income <6200:
+                    self._Income = 6200
+
+                #if income is too low and household is old, set income to unemplyment benefit level
+                if self._Age >=30 and self._Income <11500:
+                    self._Income = 11500
+
+                if random.uniform(0,1)<self._Pdeath:
+                    print("Death of agent ID: {}, age: {}, period: {}".format(self._id, self._Age, Simulation.time))
+                    deaths_period.append(Simulation.time)
+                    self.remove_this_agent()
+
+                if self._Age > 109:
+                    print("Death of agent ID: {}, age: {}, period: {}".format(self._id, self._Age, Simulation.time))
+                    deaths_period.append(Simulation.time)
+                    self.remove_this_agent()
+                
+                    
+            if random.random() < Settings.buy_interest_probability:   #2
+                # Random search
+                p = Simulation.population.get_random_agent(self)
+                # Communication
+                if (p.communicate(signal.buy), self) == signal.deal):
+                    self.transfer_to(p,p.house_value)
+                    self._owns_household == 1
+                    p._owns_household == 0
+                ??  self.house_value_system = p.house_value_system ??
+                    p._house_value_system =0
+                    
+    def communicate(self, signal, person):                #3
+        if signal == signal.buy:
+            if self._owns_household == 1 & person._wealth > self._house_value:
+                
+                return signal.deal
+            else:
+                return signal.no_deal
+
+    def transfer_to(self, other, value):                       #4
+        self._wealth -= value
+        other._wealth += value
+    
+
+    def house_value_system(self,)            
+        #elif id_event == Event.stop:  # 3
+            #print(repr(self))
+
+
+
+class Simulation(Agent):
+    # Static fields
+    Household = Agent()
+    time = 1
+
+    def __init__(self):
+        super().__init__()
+        # Initial allocation of all agents
+        # Simulation has 1 child:
+        Simulation.Household = Agent(self)
+
+        for i in range(Settings.number_of_agents):
+            Households(Simulation.Household)
+
+        # Start the simulation
+        self.event_proc(Event.start)
+
+    def event_proc(self, id_event):
+        if id_event == Event.start:  # 6
+            # Send Event.start down the tree to all decendants
+            super().event_proc(id_event)  # 7
+
+            # The Event Pump: the actual simulation      #8
+            while Simulation.time < Settings.number_of_periods:
+                self.event_proc(Event.update)
+                Simulation.time += 1
+
+
+            # Stop the simulation
+            self.event_proc(Event.stop)  # 9
+
+
+        elif id_event == Event.update:  # 10
+
+            # Adding new born persons to the population
+            for i in range(int(deaths_period.count(Simulation.time-1))):
+                Households(Simulation.Household)
+                print("agent added - Age: , Income: , Period: {}".format(Simulation.time))
+            super().event_proc(id_event)
+        else:
+                # All other events are sendt to decendants
+            super().event_proc(id_event)
+
+Simulation()
+
+all_incomes = []
+total_income=0
+for n in Simulation.Household:
+    all_incomes.append(n.get_Income())
+
+for value in all_incomes:
+    total_income += value
+
+average_income = total_income/Simulation.Household.number_of_agents()
+
+print(Simulation.Household.number_of_agents())
+print(total_income)
+print(average_income)
+print(deaths_period)
+
+all_incomes = []
+for n in Simulation.Household:
+    all_incomes.append(n.get_Income())
+
+for value in all_incomes:
+    total_income += value
 
