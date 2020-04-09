@@ -95,7 +95,7 @@ class Households(Agent):
                     
     def communicate(self, signal, person):                #3
         if signal == signal.buy:
-            if self._owns_household == 1 & person._wealth > self._house_value:
+            if self._owns_household == 1 and person._wealth > self._house_value:
                 
                 return signal.deal
             else:
@@ -106,7 +106,7 @@ class Households(Agent):
         other._wealth += value
     
 
-    def house_value_system(self,)            
+    def house_value_system(self, house_type)            
         #elif id_event == Event.stop:  # 3
             #print(repr(self))
 
