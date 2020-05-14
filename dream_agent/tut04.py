@@ -132,9 +132,10 @@ Settings.number_of_agents = 500
 Settings.number_of_periods = 10
 Settings.probability_of_death = 0.01
 Settings.number_of_new_born = 5
-Settings.out_file = "1"
-
+Settings.out_file = "test"
+test=open("test", "r")
 Simulation()
-print(Settings.out_file)
+for line in test:
+    print(line)
 # You can find output from the simulation in test.txt
 # Do not write too much to files. It is very time consuming.

@@ -29,27 +29,6 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.Simulationv02">
-    <configuration name="Dictionaries" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Speciale-Kode-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modellen - Samlet" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modellen - Samlet/Dictionaries.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Simulation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,6 +92,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tut05" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Speciale-Kode-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dream_agent" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dream_agent/tut05.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tut06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,10 +137,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Simulationv02" />
+        <item itemvalue="Python.tut05" />
+        <item itemvalue="Python.tut06" />
         <item itemvalue="Python.tut04" />
         <item itemvalue="Python.Simulation" />
-        <item itemvalue="Python.Dictionaries" />
-        <item itemvalue="Python.tut06" />
       </list>
     </recent_temporary>
   </component>
@@ -174,35 +174,55 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="645" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1585736328303" />
-    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585902526733">
+    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586726677043">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1585902526733" />
-    <state width="1594" height="216" key="GridCell.Tab.0.bottom" timestamp="1586302201193">
+    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586726677043" />
+    <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586727452379">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="216" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586302201193" />
-    <state width="1594" height="216" key="GridCell.Tab.0.center" timestamp="1586302201193">
+    <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586727452379" />
+    <state width="1594" height="215" key="GridCell.Tab.0.bottom" timestamp="1589453948818">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="216" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586302201193" />
-    <state width="1594" height="216" key="GridCell.Tab.0.left" timestamp="1586302201193">
+    <state width="1594" height="215" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948818" />
+    <state width="1594" height="215" key="GridCell.Tab.0.center" timestamp="1589453948817">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="216" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586302201193" />
-    <state width="1594" height="216" key="GridCell.Tab.0.right" timestamp="1586302201193">
+    <state width="1594" height="215" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948817" />
+    <state width="1594" height="215" key="GridCell.Tab.0.left" timestamp="1589453948817">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="216" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586302201193" />
+    <state width="1594" height="215" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948817" />
+    <state width="1594" height="215" key="GridCell.Tab.0.right" timestamp="1589453948818">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1594" height="215" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948818" />
+    <state width="1594" height="492" key="GridCell.Tab.1.bottom" timestamp="1586738214386">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1594" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214386" />
+    <state width="1594" height="492" key="GridCell.Tab.1.center" timestamp="1586738214386">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1594" height="492" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214386" />
+    <state width="1594" height="492" key="GridCell.Tab.1.left" timestamp="1586738214385">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1594" height="492" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214385" />
+    <state width="1594" height="492" key="GridCell.Tab.1.right" timestamp="1586738214386">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="1594" height="492" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214386" />
     <state x="759" y="327" key="SettingsEditor" timestamp="1586198929553">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="759" y="327" key="SettingsEditor/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586198929553" />
-    <state x="847" y="483" key="com.intellij.ide.util.TipDialog" timestamp="1586258505409">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1589449054456">
+      <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1585638546026" />
-    <state x="847" y="483" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586258505409" />
+    <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1589449054456" />
+    <state x="848" y="484" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1587121852257" />
     <state x="979" y="261" width="747" height="909" key="find.popup" timestamp="1586268225795">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

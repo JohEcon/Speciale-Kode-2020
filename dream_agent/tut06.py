@@ -81,6 +81,9 @@ class Person(Agent):
     def get_wealth(self):
         return self._wealth
 
+
+
+
 # The Statistics object
 #---------------------------
 class Statistics(Agent):
