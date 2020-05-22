@@ -135,7 +135,7 @@ Settings.number_of_new_born = 5
 Settings.out_file = "test"
 test=open("test", "r")
 Simulation()
-for line in test:
-    print(line)
+"for line in test:"
+"print(line)"
 # You can find output from the simulation in test.txt
 # Do not write too much to files. It is very time consuming.

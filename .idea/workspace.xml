@@ -25,11 +25,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/The Model" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Simulationv02">
-    <configuration name="Simulation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Johannes Bæk\Documents\GitHub\Speciale-Kode-2020\The Model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Model_Simulation (1)">
+    <configuration name="Bank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -37,11 +42,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modellen - Samlet" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modellen - Samlet/Simulation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model/Bank.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -50,7 +55,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Simulationv02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Graphics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,11 +63,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modellen - Samlet" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modellen - Samlet/Simulationv02.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model/Graphics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Household" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Speciale-Kode-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model/Household.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Model_Simulation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Speciale-Kode-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model/Model_Simulation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,55 +139,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tut05" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Speciale-Kode-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dream_agent" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dream_agent/tut05.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tut06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Speciale-Kode-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dream_agent" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dream_agent/tut06.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Simulationv02" />
-        <item itemvalue="Python.tut05" />
-        <item itemvalue="Python.tut06" />
+        <item itemvalue="Python.Model_Simulation (1)" />
+        <item itemvalue="Python.Household" />
+        <item itemvalue="Python.Bank" />
+        <item itemvalue="Python.Graphics" />
         <item itemvalue="Python.tut04" />
-        <item itemvalue="Python.Simulation" />
       </list>
     </recent_temporary>
   </component>
@@ -170,34 +175,38 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="923" y="367" key="#Inspections" timestamp="1589583464408">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="923" y="367" key="#Inspections/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589583464408" />
     <state x="645" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585736328303">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="645" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1585736328303" />
-    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586726677043">
+    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590021365589">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586726677043" />
+    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590021365589" />
     <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586727452379">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586727452379" />
-    <state width="1594" height="215" key="GridCell.Tab.0.bottom" timestamp="1589453948818">
+    <state width="1591" height="364" key="GridCell.Tab.0.bottom" timestamp="1590109576093">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="215" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948818" />
-    <state width="1594" height="215" key="GridCell.Tab.0.center" timestamp="1589453948817">
+    <state width="1591" height="364" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
+    <state width="1591" height="364" key="GridCell.Tab.0.center" timestamp="1590109576093">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="215" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948817" />
-    <state width="1594" height="215" key="GridCell.Tab.0.left" timestamp="1589453948817">
+    <state width="1591" height="364" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
+    <state width="1591" height="364" key="GridCell.Tab.0.left" timestamp="1590109576093">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="215" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948817" />
-    <state width="1594" height="215" key="GridCell.Tab.0.right" timestamp="1589453948818">
+    <state width="1591" height="364" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
+    <state width="1591" height="364" key="GridCell.Tab.0.right" timestamp="1590109576093">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="215" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589453948818" />
+    <state width="1591" height="364" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
     <state width="1594" height="492" key="GridCell.Tab.1.bottom" timestamp="1586738214386">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -214,15 +223,23 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1594" height="492" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214386" />
-    <state x="759" y="327" key="SettingsEditor" timestamp="1586198929553">
+    <state x="759" y="327" key="SettingsEditor" timestamp="1589583515570">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="759" y="327" key="SettingsEditor/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586198929553" />
-    <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1589449054456">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state x="759" y="327" key="SettingsEditor/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589583515570" />
+    <state x="848" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1590137204860">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1589449054456" />
-    <state x="848" y="484" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1587121852257" />
+    <state x="848" y="484" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590137204860" />
+    <state x="1273" y="0" width="1294" height="1417" key="dock-window-1" timestamp="1590012980047">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1273" y="0" width="1294" height="1417" key="dock-window-1/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590012980047" />
+    <state x="1273" y="0" width="1294" height="1417" key="dock-window-2" timestamp="1590013121235">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1273" y="0" width="1294" height="1417" key="dock-window-2/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590013121235" />
     <state x="979" y="261" width="747" height="909" key="find.popup" timestamp="1586268225795">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

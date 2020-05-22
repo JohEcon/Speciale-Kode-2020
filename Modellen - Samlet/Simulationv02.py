@@ -2,30 +2,15 @@
 from dream_agent import Agent
 from Dictionaries import *
 import random, math, numpy, matplotlib.pyplot as plt
+import statistics
+from Settings import *
 
 # We allocate an agent object
 Model = Agent()
 
-class Settings: pass
-Settings.number_of_agents=1000
-Settings.number_of_periods=2000
-Settings.periods_in_year=12
-Settings.starting_income=11500
-Settings.starting_age= 20
-Settings.retire_age=67
-Settings.statistics_file= "statistics.txt"
-Settings.graphics_show = False
-Settings.graphics_periods_per_pic = 12
-
-# We create an event class
-class Event: pass
-Event.start = 1  # The model starts
-Event.stop = 2  # The model stops
-Event.period_start = 3
-Event.update = 4  # Agent behavior
-
 # We define the Households object
 deaths_period = []
+
 
 class Households(Agent):
     def __init__(self, parent=None, Wealth=0, Pdeath=0, Income=0, Age=Settings.starting_age, Dead=0):
@@ -39,7 +24,7 @@ class Households(Agent):
     def get_Wealth(self):
         return self._Wealth
 
-     # Report Income
+    # Report Income
     def get_Income(self):
         return self._Income
 
@@ -49,14 +34,16 @@ class Households(Agent):
 
     # We define the string representation of the class objects
     def __repr__(self):
-        return "Household(ID: {}, Wealth: {}, Income: {}, Age: {}, p-death: {} )".format(self._id, self._Wealth, self._Income, self._Age, self._Pdeath)
+        return "Household(ID: {}, Wealth: {}, Income: {}, Age: {}, p-death: {} )".format(self._id, self._Wealth,
+                                                                                         self._Income, self._Age,
+                                                                                         self._Pdeath)
 
     def event_proc(self, id_event):
         if id_event == Event.update:  # 2
 
             # if income is too low and household is young, set income to SU-level
             if self._Age == Settings.starting_age and self._Income < Settings.starting_income:
-                self._Income = Settings.starting_income*(1+numpy.random.normal(0, 0.1))
+                self._Income = Settings.starting_income * (1 + numpy.random.normal(0, 0.1))
 
             if self._Age > Settings.starting_age and self._Income < 6200:
                 self._Income = 6200
@@ -64,16 +51,17 @@ class Households(Agent):
             if self._Age >= 30 and self._Income < 11500:
                 self._Income = 11500
 
-            #every year, increase age by 1 and update income
+            # every year, increase age by 1 and update income
             if Simulation.time % Settings.periods_in_year == 0:
                 self._Age += 1
-                self._Pdeath = 0.0005+10**(-4.2+0.038*self._Age)
+                self._Pdeath = 0.0005 + 10 ** (-4.2 + 0.038 * self._Age)
 
                 if self._Age < Settings.retire_age:
                     self._Income += dict_income_raise[get_index(self._Age)]
-                    self._Income = self._Income*(math.exp(numpy.random.normal(0, 0.113)+numpy.random.normal(0, 0.155)))
+                    self._Income = self._Income * (
+                        math.exp(numpy.random.normal(0, 0.113) + numpy.random.normal(0, 0.155)))
 
-                if random.uniform(0,1)<self._Pdeath:
+                if random.uniform(0, 1) < self._Pdeath:
                     print("Death of agent ID: {}, age: {}, period: {}".format(self._id, self._Age, Simulation.time))
                     deaths_period.append(Simulation.time)
                     self._Dead = 1
@@ -86,13 +74,15 @@ class Households(Agent):
                     self.remove_this_agent()
 
         elif id_event == Event.stop:  # 3
-        
+
             print(repr(self))
 
-class Bank (Agent):
+
+class Bank(Agent):
     pass
 
-class Houses (Agent):
+
+class Houses(Agent):
     def __init__(self, parent=None, square_meters=0, quality=0, owner=0, price=0):
         super().__init__(parent)
         self._square_meters = square_meters
@@ -104,9 +94,10 @@ class Houses (Agent):
         return self._quality
 
     def event_proc(self, id_event):
-        if id_event== Event.start:
-            self._quality= random.uniform(0,1)
-            self._square_meters= random.uniform(50,400)
+        if id_event == Event.start:
+            self._quality = random.uniform(0, 1)
+            self._square_meters = random.uniform(50, 400)
+
 
 class Statistics(Agent):
 
@@ -117,7 +108,7 @@ class Statistics(Agent):
             # Initialize graphics
             if Settings.graphics_show == True:
                 plt.ion()
-                plt.figure(figsize=[5,5])
+                plt.figure(figsize=[5, 5])
 
         elif id_event == Event.stop:
             self._file.close()
@@ -126,7 +117,7 @@ class Statistics(Agent):
             print(Simulation.time)
 
             if Settings.graphics_show == True:
-                if Simulation.time % Settings.graphics_periods_per_pic==0:
+                if Simulation.time % Settings.graphics_periods_per_pic == 0:
                     # Gather data from population
                     w = []
                     for p in Simulation.Household:
@@ -139,6 +130,7 @@ class Statistics(Agent):
                     plt.title("Distribution of wealth ({})".format(Simulation.time))
                     plt.show()
                     plt.pause(0.000001)
+
 
 class Simulation(Agent):
     # Static fields
@@ -174,7 +166,6 @@ class Simulation(Agent):
                 self.event_proc(Event.update)
                 Simulation.time += 1
 
-
             # Stop the simulation
             self.event_proc(Event.stop)  # 9
 
@@ -182,23 +173,21 @@ class Simulation(Agent):
         elif id_event == Event.update:  # 10
 
             # Adding new born persons to the population
-            for i in range(int(deaths_period.count(Simulation.time-1))):
+            for i in range(int(deaths_period.count(Simulation.time - 1))):
                 Households(Simulation.Household)
                 print("agent added - Age: , Income: , Period: {}".format(Simulation.time))
             super().event_proc(id_event)
         else:
-                # All other events are sendt to decendants
+            # All other events are sendt to decendants
             super().event_proc(id_event)
 
 
-
-
-
 Simulation()
+
 all_houses_quality = []
 all_incomes = []
-all_ages= []
-total_income=0
+all_ages = []
+total_income = 0
 
 for n in Simulation.Houses:
     all_houses_quality.append(n.get_quality())
@@ -212,14 +201,15 @@ for n in Simulation.Household:
 for value in all_incomes:
     total_income += value
 
-average_income = total_income/Simulation.Household.number_of_agents()
-
-#print(Simulation.Household.number_of_agents())
-#print(total_income)
-#print(average_income)
-#print(deaths_period)
-#print(all_incomes)
-print(all_houses_quality)
+average_income = total_income / Simulation.Household.number_of_agents()
+median_income = statistics.median(all_incomes)
+# print(Simulation.Household.number_of_agents())
+# print(total_income)
+# print(average_income)
+# print(deaths_period)
+# print(all_incomes)
+print(median_income)
+print(average_income)
 all_incomes = []
 for n in Simulation.Household:
     all_incomes.append(n.get_Income())
@@ -228,13 +218,12 @@ for value in all_incomes:
     total_income += value
 
 print(all_ages)
-#all_incomes = [i for i in all_incomes if i != 11500]
+# all_incomes = [i for i in all_incomes if i != 11500]
 
 
 plt.hist(all_incomes, bins=2500, color="blue")
 plt.axis(xmin=-10000, xmax=150000)
 plt.show()
-
 
 plt.hist(all_ages, bins=dict_bin_ages2, color="blue")
 plt.axis(xmin=20, xmax=110)
