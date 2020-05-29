@@ -25,16 +25,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/The Model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/The Model v02" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Johannes Bæk\Documents\GitHub\Speciale-Kode-2020\The Model v02" />
       <recent name="C:\Users\Johannes Bæk\Documents\GitHub\Speciale-Kode-2020\The Model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Model_Simulation (1)">
-    <configuration name="Bank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Model_Simulation">
+    <configuration name="Household (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -42,32 +43,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model v02" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model/Bank.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Graphics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Speciale-Kode-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model/Graphics.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model v02/Household.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -97,6 +77,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Houses" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Speciale-Kode-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model v02" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model v02/Houses.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Model_Simulation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,7 +119,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tut04" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Model_Simulation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -126,11 +127,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dream_agent" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model v02" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dream_agent/tut04.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model v02/Model_Simulation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Model_Simulation" />
+        <item itemvalue="Python.Houses" />
         <item itemvalue="Python.Model_Simulation (1)" />
+        <item itemvalue="Python.Household (1)" />
         <item itemvalue="Python.Household" />
-        <item itemvalue="Python.Bank" />
-        <item itemvalue="Python.Graphics" />
-        <item itemvalue="Python.tut04" />
       </list>
     </recent_temporary>
   </component>
@@ -191,22 +192,22 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586727452379" />
-    <state width="1591" height="364" key="GridCell.Tab.0.bottom" timestamp="1590109576093">
+    <state width="1657" height="416" key="GridCell.Tab.0.bottom" timestamp="1590720915087">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1591" height="364" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
-    <state width="1591" height="364" key="GridCell.Tab.0.center" timestamp="1590109576093">
+    <state width="1657" height="416" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
+    <state width="1657" height="416" key="GridCell.Tab.0.center" timestamp="1590720915087">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1591" height="364" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
-    <state width="1591" height="364" key="GridCell.Tab.0.left" timestamp="1590109576093">
+    <state width="1657" height="416" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
+    <state width="1657" height="416" key="GridCell.Tab.0.left" timestamp="1590720915087">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1591" height="364" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
-    <state width="1591" height="364" key="GridCell.Tab.0.right" timestamp="1590109576093">
+    <state width="1657" height="416" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
+    <state width="1657" height="416" key="GridCell.Tab.0.right" timestamp="1590720915087">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1591" height="364" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590109576093" />
+    <state width="1657" height="416" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
     <state width="1594" height="492" key="GridCell.Tab.1.bottom" timestamp="1586738214386">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -227,11 +228,11 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="759" y="327" key="SettingsEditor/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589583515570" />
-    <state x="848" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1590137204860">
+    <state x="848" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1590732320046">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1589449054456" />
-    <state x="848" y="484" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590137204860" />
+    <state x="848" y="484" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590732320046" />
     <state x="1273" y="0" width="1294" height="1417" key="dock-window-1" timestamp="1590012980047">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

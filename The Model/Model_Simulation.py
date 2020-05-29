@@ -78,5 +78,5 @@ class Simulation(Agent):
             # All other events are sent to decendants
             super().event_proc(id_event)
 
+#We run the simulation
 Simulation()
-

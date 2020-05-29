@@ -6,25 +6,35 @@ def prop_death(age):
     return x
 
 class Settings: pass
+#Number of agents and periods settings
 Settings.number_of_agents=10
-Settings.number_of_periods=2000
-Settings.periods_in_year=12
-Settings.starting_income=10000
-Settings.su_income=6200
-Settings.kh_income=11500
-Settings.starting_age= 20
-Settings.retire_age=67
-Settings.out_file="Statistics.py"
-Settings.graphics_show = False
-Settings.graphics_periods_per_pic = 12
-Settings.number_of_houses = 10
-Settings.starting_interest = 0.01
-Settings.piti_multiplier = 0.28
 Settings.number_of_banks = 1
-Settings.interest = 0.04
-Settings.loan_lenght = 30
+Settings.number_of_houses = 10
+Settings.number_of_periods = 2000
+Settings.periods_in_year = 12
+
+#income and age settings
+Settings.starting_income = 10000
+Settings.su_income = 6200
+Settings.kh_income = 11500
+Settings.starting_age = 20
+Settings.retire_age = 67
 Settings.max_age = 109
 deaths_period = []
+
+#Bank and loan settings
+Settings.starting_interest = 0.01
+Settings.piti_multiplier = 0.28
+Settings.interest = 0.04
+Settings.loan_lenght = 30
+
+#other settings
+Settings.out_file = "Statistics.py"
+Settings.graphics_show = False
+Settings.graphics_periods_per_pic = 12
+
+
+
 
 
 # We create an event class

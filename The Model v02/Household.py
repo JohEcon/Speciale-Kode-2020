@@ -1,11 +1,11 @@
 
-from Bank import *
+"""from Bank import *
 import random, math, numpy
 from Data import *
 
 class Household(Agent):
 
-    def __init__(self, parent=None, wealth= 0, pdeath = 0, income = 0, age = Settings.starting_age, dead = 0, died_last_period = 0, moving = 0):
+    def __init__(self, parent=None, wealth= 0, pdeath = 0, income = 0, age = Settings.starting_age, dead = False, died_last_period = False, moving = False):
         super().__init__(parent)
         self._wealth = wealth
         self._income = income
@@ -40,11 +40,11 @@ class Household(Agent):
 
     def event_proc(self, id_event):
         #checking if household is dead
-        if self._dead == 1:
-            self._died_last_period = 0
+        if self._dead == True:
+            self._died_last_period = False
 
         #initiating behaviour of living household
-        if self._dead == 0:
+        if self._dead == False:
             if id_event == Event.period_start:
                 pass
 
@@ -77,13 +77,13 @@ class Household(Agent):
                     self._income = self._income * (math.exp(numpy.random.normal(0, 0.113) + numpy.random.normal(0, 0.155)))
 
                 if random.uniform(0, 1) < self._pdeath:
-                    self._died_last_period = 1
-                    self._dead = 1
+                    self._died_last_period = True
+                    self._dead = True
 
                 if self._age > Settings.max_age:
-                    self._died_last_period = 1
-                    self._dead = 1
+                    self._died_last_period = True
+                    self._dead = True
 
             elif id_event == Event.stop:  # 3
-                    print(repr(self))
+                    print(repr(self))"""
 

@@ -17,3 +17,8 @@ class Houses(Agent):
         if id_event == Event.start:
             self._quality = random.uniform(0, 1)
             self._square_meters = random.uniform(50, 400)
+
+    def setting_owner(self, owner_id):
+        print("old owner: {}".format(self._owner))
+        self._owner=owner_id
+        print("new owner: {}".format(self._owner))
