@@ -35,7 +35,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.Model_Simulation">
-    <configuration name="Household (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Bank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Speciale-Kode-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -47,28 +47,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model v02/Household.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Household" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Speciale-Kode-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model/Household.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model v02/Bank.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,13 +119,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Speciale-Kode-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Model v02" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Model v02/Settings.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Model_Simulation" />
-        <item itemvalue="Python.Houses" />
         <item itemvalue="Python.Model_Simulation (1)" />
-        <item itemvalue="Python.Household (1)" />
-        <item itemvalue="Python.Household" />
+        <item itemvalue="Python.Bank" />
+        <item itemvalue="Python.Houses" />
+        <item itemvalue="Python.Settings" />
       </list>
     </recent_temporary>
   </component>
@@ -192,51 +192,51 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586727452379" />
-    <state width="1657" height="416" key="GridCell.Tab.0.bottom" timestamp="1590720915087">
+    <state width="1610" height="385" key="GridCell.Tab.0.bottom" timestamp="1591043232623">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1657" height="416" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
-    <state width="1657" height="416" key="GridCell.Tab.0.center" timestamp="1590720915087">
+    <state width="1610" height="385" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591043232623" />
+    <state width="1610" height="385" key="GridCell.Tab.0.center" timestamp="1591043232623">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1657" height="416" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
-    <state width="1657" height="416" key="GridCell.Tab.0.left" timestamp="1590720915087">
+    <state width="1610" height="385" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591043232623" />
+    <state width="1610" height="385" key="GridCell.Tab.0.left" timestamp="1591043232623">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1657" height="416" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
-    <state width="1657" height="416" key="GridCell.Tab.0.right" timestamp="1590720915087">
+    <state width="1610" height="385" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591043232623" />
+    <state width="1610" height="385" key="GridCell.Tab.0.right" timestamp="1591043232623">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1657" height="416" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590720915087" />
-    <state width="1594" height="492" key="GridCell.Tab.1.bottom" timestamp="1586738214386">
+    <state width="1610" height="385" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591043232623" />
+    <state width="1610" height="491" key="GridCell.Tab.1.bottom" timestamp="1591036801403">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214386" />
-    <state width="1594" height="492" key="GridCell.Tab.1.center" timestamp="1586738214386">
+    <state width="1610" height="491" key="GridCell.Tab.1.bottom/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591036801403" />
+    <state width="1610" height="491" key="GridCell.Tab.1.center" timestamp="1591036801403">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="492" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214386" />
-    <state width="1594" height="492" key="GridCell.Tab.1.left" timestamp="1586738214385">
+    <state width="1610" height="491" key="GridCell.Tab.1.center/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591036801403" />
+    <state width="1610" height="491" key="GridCell.Tab.1.left" timestamp="1591036801403">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="492" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214385" />
-    <state width="1594" height="492" key="GridCell.Tab.1.right" timestamp="1586738214386">
+    <state width="1610" height="491" key="GridCell.Tab.1.left/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591036801403" />
+    <state width="1610" height="491" key="GridCell.Tab.1.right" timestamp="1591036801403">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1594" height="492" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1586738214386" />
+    <state width="1610" height="491" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1591036801403" />
     <state x="759" y="327" key="SettingsEditor" timestamp="1589583515570">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="759" y="327" key="SettingsEditor/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589583515570" />
-    <state x="848" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1590732320046">
+    <state x="848" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1590999759160">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1589449054456" />
-    <state x="848" y="484" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590732320046" />
-    <state x="1273" y="0" width="1294" height="1417" key="dock-window-1" timestamp="1590012980047">
+    <state x="848" y="484" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590999759160" />
+    <state x="757" y="238" width="917" height="972" key="dock-window-1" timestamp="1590966164444">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1273" y="0" width="1294" height="1417" key="dock-window-1/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590012980047" />
+    <state x="757" y="238" width="917" height="972" key="dock-window-1/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590966164444" />
     <state x="1273" y="0" width="1294" height="1417" key="dock-window-2" timestamp="1590013121235">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

@@ -1,6 +1,6 @@
 from dream_agent import *
 from Settings import *
-
+from decimal import Decimal
 class Bank(Agent):
     def __init__(self, parent = None, interest = Settings.interest):
         super().__init__(parent)
@@ -15,4 +15,11 @@ class Bank(Agent):
         max_loan = (piti*(1-(1+self._interest/periods)**(-(duration*periods))))/(self._interest/periods)
         return max_loan
 
+    def get_loan_household(self, principal, duration, periods):
+        annuity = (principal*(self._interest/periods))/((1-(1+(self._interest/periods))**(-(duration*periods))))
+        return annuity
+
 danske_bank = Bank()
+
+print(danske_bank.max_loan_household(20,10000,30,12))
+print(danske_bank.get_loan_household(586491.4732717462,30,12))
