@@ -72,7 +72,7 @@ class Household(Agent):
 
         if communicate == Communication.sell_house:
             #get money form purchase
-            self._wealth += 5*agent.get_price()
+            self._wealth += agent.get_price()
             #remove yourself as seller
             agent.setting_seller(None)
             #remove self as owner, if still owner
@@ -82,10 +82,10 @@ class Household(Agent):
                 pass
 
     def __repr__(self):
-        return "Household(ID: {a}, Wealth: {b}, Income: {c}, Age: {d}, House ID: {e}, House quality: {f}, p-death: {g}, max loan: {h}, moving: {i}, houses bought: {j} )".format(a = self._id, b = round(self._wealth),
+        return "Household(ID: {a}, Wealth: {b}, Income: {c}, after_tax: {aa} Age: {d}, House ID: {e}, House quality: {f}, p-death: {g}, max loan: {h}, moving: {i}, houses bought: {j} )".format(a = self._id, b = round(self._wealth),
                                                                                          c = round(self._income), d = self._age, e = self._house_owned,
                                                                                          f = round(get_agent_with_id(Simulation.Houses, self._house_owned).get_quality() if get_agent_with_id(Simulation.Houses, self._house_owned) != None else 0, 4),
-                                                                                         g = round(self._pdeath, 4), h = round(self._max_loan), i = self._moving, j= self._houses_bought)
+                                                                                         g = round(self._pdeath, 4), h = round(self._max_loan), i = self._moving, j= self._houses_bought, aa = round(pay_income_taxes(self._income)))
 
     def event_proc(self, id_event):
         #checking if household is dead
@@ -105,6 +105,11 @@ class Household(Agent):
                 #set starting income for newborn agents
                 if self._age == Settings.starting_age and self._income < 1:
                     self._income = Settings.starting_income * (1 + numpy.random.normal(0, 0.1))
+
+                #add income after tax to wealth
+                self._wealth += pay_income_taxes(self._income)
+
+
 
             #check if household wants to move, if so, initiate moving procedure
                 if random.uniform(0,1) < 0.01 and self._moving == False:
@@ -220,13 +225,13 @@ class Simulation(Agent):
         self._statistics = Statistics(self)
         Simulation.Households = Agent(self)
 
-        for i in range(Settings.number_of_banks):
+        for _ in range(Settings.number_of_banks):
             Bank(Simulation.Banks)
 
-        for i in range(Settings.number_of_agents):
+        for _ in range(Settings.number_of_agents):
             Household(Simulation.Households)
 
-        for i in range(Settings.number_of_houses):
+        for _ in range(Settings.number_of_houses):
             Houses(Simulation.Houses)
 
         # Start the simulation
@@ -253,7 +258,7 @@ class Simulation(Agent):
         elif id_event == Event.period_start:  # 10
             # Adding new born persons to the population
             super().event_proc(id_event)
-            for i in range(dict_deaths_period[Simulation.time-1]):
+            for _ in range(dict_deaths_period[Simulation.time-1]):
                 Household(Simulation.Households)
 
         else:

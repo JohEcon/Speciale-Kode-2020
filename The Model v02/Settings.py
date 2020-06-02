@@ -24,25 +24,25 @@ def get_agent_with_id(agent_type, agent_id):
             pass
     return agent
 
-"""def get_agent_with_method(agent_type, agent_id, method):
-    agent_found = False
-    agent = None
-    command = method
-    for n in agent_type:
-        if agent_found == True:
-            break
-        if n.get_id() == agent_id:
-            agent = n
-            agent_found = True
-        else:
-            pass
-    agent_command = "agent.command()"
-    if agent != None and command != None:
-        return agent_command
-    if agent != None and command == None:
-        return agent
-    else:
-        return agent"""
+#we define a method to pay taxes on income
+def pay_income_taxes(income):
+    arb_bidrag = income * Settings.arbejdsmarkedsbidrag
+    bundskat = 0
+    topskat = 0
+
+    if income >= Settings.bundfradrag/Settings.periods_in_year:
+        bundskat = (income-Settings.bundfradrag/Settings.periods_in_year) * Settings.bundskat
+
+    if income > Settings.topskat_limit/Settings.periods_in_year:
+        topskat = (income - Settings.topskat_limit/Settings.periods_in_year) * Settings.topskat
+
+    after_tax_income = income - arb_bidrag - bundskat - topskat
+    skattetryk = (1 - after_tax_income / income)
+
+    if (1 - skattetryk) < (1 - (Settings.skatteloft + Settings.arbejdsmarkedsbidrag)):
+        after_tax_income = income * (1 - (Settings.skatteloft + Settings.arbejdsmarkedsbidrag))
+
+    return after_tax_income
 
 class Settings: pass
 #Number of agents and periods settings
@@ -51,6 +51,14 @@ Settings.number_of_banks = 1
 Settings.number_of_houses = 10
 Settings.number_of_periods = 1000
 Settings.periods_in_year = 12
+
+#tax settings
+Settings.bundfradrag = 46500
+Settings.topskat_limit = 531000 * 1.08
+Settings.arbejdsmarkedsbidrag = 0.08
+Settings.bundskat = 0.26 + 0.0075 + 0.1211
+Settings.topskat = 0.15
+Settings.skatteloft = 0.5206
 
 #income and age settings
 Settings.starting_income = 10000
@@ -78,9 +86,10 @@ Settings.graphics_periods_per_pic = 12
 class Event: pass
 Event.start = 1  # The model starts
 Event.stop = 2  # The model stops
-Event.period_start = 3 #consolidation of what happened last period
-Event.update = 4  # Agent behavior
-Event.update_year = 5 #Agent behavior which only happends once a year
+Event.period_start = 3 #
+Event.update = 4 # Agent behavior
+Event.period_end = 5 #consolidation of what happened last period
+Event.update_year = 6 #Agent behavior which only happends once a year
 
 class Communication: pass
 Communication.buy_house = 1
