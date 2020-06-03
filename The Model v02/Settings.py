@@ -3,6 +3,11 @@
 #We define the probability of death at a given age:
 def prop_death(age):
     x = 0.0005 + 10 ** (-4.2 + 0.038 * age)
+    y = (1+x)**(1/Settings.periods_in_year)-1
+    return y
+
+def prop_moving(age):
+    x=0.05
     return x
 
 #we define the household utility function
@@ -68,7 +73,7 @@ Settings.pension_share = 0.8
 Settings.starting_age = 20
 Settings.retire_age = 67
 Settings.max_age = 109
-deaths_period = []
+Settings.died_last_period = 0
 
 #Bank and loan settings
 Settings.starting_interest = 0.01
@@ -77,6 +82,7 @@ Settings.interest = 0.04
 Settings.loan_lenght = 30
 
 #other settings
+Settings.random_seed = 1 #If equal to 0, seed is random
 Settings.out_file = "Statistics.py"
 Settings.graphics_show = False
 Settings.graphics_periods_per_pic = 12

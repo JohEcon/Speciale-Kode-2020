@@ -121,7 +121,7 @@ class Statistics(Agent):
                     # Gather data from population
                     w = []
                     for p in Simulation.Household:
-                        w.append(p.get_Income())
+                        w.append(p.income)
 
                     # Display data
                     plt.clf()
@@ -193,10 +193,10 @@ for n in Simulation.Houses:
     all_houses_quality.append(n.get_quality())
 
 for n in Simulation.Household:
-    all_incomes.append(n.get_Income())
+    all_incomes.append(n.income)
 
 for n in Simulation.Household:
-    all_ages.append(n.get_age())
+    all_ages.append(n.age)
 
 for value in all_incomes:
     total_income += value
@@ -212,7 +212,7 @@ print(median_income)
 print(average_income)
 all_incomes = []
 for n in Simulation.Household:
-    all_incomes.append(n.get_Income())
+    all_incomes.append(n.income)
 
 for value in all_incomes:
     total_income += value

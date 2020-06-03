@@ -20,6 +20,3 @@ class Bank(Agent):
         return annuity
 
 danske_bank = Bank()
-
-print(danske_bank.max_loan_household(20,10000,30,12))
-print(danske_bank.get_loan_household(586491.4732717462,30,12))

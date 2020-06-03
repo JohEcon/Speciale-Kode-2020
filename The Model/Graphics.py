@@ -10,14 +10,14 @@ for n in Simulation.Houses:
 
 
 for n in Simulation.Households:
-    if n.get_dead() == 0:
-        all_incomes.append(n.get_income())
+    if n.dead == 0:
+        all_incomes.append(n.income)
     else:
         pass
 
 for n in Simulation.Households:
-    if n.get_dead() == 0:
-        all_ages.append(n.get_age())
+    if n.dead == 0:
+        all_ages.append(n.age)
     else:
         pass
 
@@ -38,7 +38,7 @@ for value in all_incomes:
     total_income += value
 
 for n in Simulation.Households:
-    if n.get_income() > 11499 and n.get_income() < 11501 and n.get_dead() == 0:
+    if n.income > 11499 and n.income < 11501 and n.dead == 0:
        kh_number += 1
     else:
         pass

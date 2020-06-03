@@ -16,7 +16,7 @@ class Statistics(Agent):
 
         elif id_event == Event.period_start:            #3
             for n in Simulation.Households:
-                if n.get_died_last_period() == 1:
+                if n.died_last_period == 1:
                     print("Death of agent ID: {}, age: {}, dead: {}, period: {}".format(n._id, n._age, n._dead, Simulation.time-1))
                     deaths_period.append(Simulation.time)
                 else:
