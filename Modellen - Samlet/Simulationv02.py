@@ -190,7 +190,7 @@ all_ages = []
 total_income = 0
 
 for n in Simulation.Houses:
-    all_houses_quality.append(n.get_quality())
+    all_houses_quality.append(n.quality)
 
 for n in Simulation.Household:
     all_incomes.append(n.income)

@@ -11,23 +11,10 @@ def prop_moving(age):
     return x
 
 #we define the household utility function
-def household_utility(income, a, b):
-    x = income*a*b
-    return x
-
-#we define a method to find the agent with a given id
-def get_agent_with_id(agent_type, agent_id):
-    agent = None
-    agent_found = False
-    for n in agent_type:
-        if agent_found == True:
-            break
-        if n.id() == agent_id:
-            agent = n
-            agent_found = True
-        else:
-            pass
-    return agent
+def household_utility(income, annuity, quality, a):
+    spending = income - annuity
+    cd_utility = (spending ** a)*(quality ** (1-a))
+    return cd_utility
 
 #we define a method to pay taxes on income
 def pay_income_taxes(income):
@@ -57,6 +44,10 @@ Settings.number_of_houses = 10
 Settings.number_of_periods = 1000
 Settings.periods_in_year = 12
 
+#House selling and buying settings
+Settings.price_adjustment_frequency = 2
+Settings.houses_surveyed = 4
+
 #tax settings
 Settings.bundfradrag = 46500
 Settings.topskat_limit = 531000 * 1.08
@@ -73,7 +64,6 @@ Settings.pension_share = 0.8
 Settings.starting_age = 20
 Settings.retire_age = 67
 Settings.max_age = 109
-Settings.died_last_period = 0
 
 #Bank and loan settings
 Settings.starting_interest = 0.01

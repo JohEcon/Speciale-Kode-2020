@@ -5,14 +5,14 @@ from Data import *
 
 class Household(Agent):
 
-    def __init__(self, parent=None, wealth= 0, pdeath = 0, income = 0, age = Settings.starting_age, dead = 0, died_last_period = 0, moving = 0):
+    def __init__(self, parent=None, wealth= 0, pdeath = 0, income = 0, age = Settings.starting_age, dead = 0, died_this_period = 0, moving = 0):
         super().__init__(parent)
         self._wealth = wealth
         self._income = income
         self._age = age
         self._pdeath = pdeath
         self._dead = dead
-        self._died_last_period = died_last_period
+        self._died_this_period = died_this_period
         self._moving = moving
 
     def get_wealth(self):
@@ -30,8 +30,8 @@ class Household(Agent):
     def get_dead(self):
         return self._dead
 
-    def get_died_last_period(self):
-        return self._died_last_period
+    def get_died_this_period(self):
+        return self._died_this_period
     # We define the string representation of the class objects
     def __repr__(self):
         return "Household(ID: {}, Wealth: {}, Income: {}, Age: {}, p-death: {}, dead: {} )".format(self._id, self._wealth,
@@ -41,7 +41,7 @@ class Household(Agent):
     def event_proc(self, id_event):
         #checking if household is dead
         if self._dead == 1:
-            self._died_last_period = 0
+            self._died_this_period = 0
 
         #initiating behaviour of living household
         if self._dead == 0:
@@ -77,11 +77,11 @@ class Household(Agent):
                     self._income = self._income * (math.exp(numpy.random.normal(0, 0.113) + numpy.random.normal(0, 0.155)))
 
                 if random.uniform(0, 1) < self._pdeath:
-                    self._died_last_period = 1
+                    self._died_this_period = 1
                     self._dead = 1
 
                 if self._age > Settings.max_age:
-                    self._died_last_period = 1
+                    self._died_this_period = 1
                     self._dead = 1
 
             elif id_event == Event.stop:  # 3

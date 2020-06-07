@@ -2,8 +2,10 @@
 # Version 0.1.  4-03-2019. First version
 # Version 0.2. 10-03-2019. Fixing bug in get_random_agent()
 # Version 0.3. 13-03-2019. Fixing bug in get_random_agent()
+from Settings import *
 import random
-
+if Settings.random_seed != 0:
+    random.seed(Settings.random_seed)
 class Agent:
 	"""Common base class for secret agents"""
 	_nAgents = 0
