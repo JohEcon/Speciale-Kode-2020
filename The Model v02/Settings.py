@@ -6,30 +6,32 @@ def prop_death(age):
     y = (1+x)**(1/Settings.periods_in_year)-1
     return y
 
-def prop_moving(age):
-    x=0.05
-    return x
-
 #we define the household utility function
-def household_utility(income, annuity, quality, a):
-    spending = income - annuity
-    cd_utility = (spending ** a)*(quality ** (1-a))
-    return cd_utility
+
+"""def household_utility(household, house):
+    annuity = Bank.get_annuity(Simulation.Banks.get_random_agent(), house.price - household.equity, Settings.loan_lenght, Settings.periods_in_year)
+    spending = household.income - annuity
+    quality = house.quality
+    a = household.utility_alpha
+    cd_utility = (spending ** a) * (quality ** (1 - a))
+    return cd_utility"""
 
 #we define a method to pay taxes on income
 def pay_income_taxes(income):
+    after_tax_income = 0
     arb_bidrag = income * Settings.arbejdsmarkedsbidrag
     bundskat = 0
     topskat = 0
 
-    if income >= Settings.bundfradrag/Settings.periods_in_year:
+    if income >= Settings.bundfradrag/Settings.periods_in_year and income >0:
         bundskat = (income-Settings.bundfradrag/Settings.periods_in_year) * Settings.bundskat
 
     if income > Settings.topskat_limit/Settings.periods_in_year:
         topskat = (income - Settings.topskat_limit/Settings.periods_in_year) * Settings.topskat
 
-    after_tax_income = income - arb_bidrag - bundskat - topskat
-    skattetryk = (1 - after_tax_income / income)
+    if income >0:
+        after_tax_income = income - arb_bidrag - bundskat - topskat
+        skattetryk = (1 - after_tax_income / income)
 
     if (1 - skattetryk) < (1 - (Settings.skatteloft + Settings.arbejdsmarkedsbidrag)):
         after_tax_income = income * (1 - (Settings.skatteloft + Settings.arbejdsmarkedsbidrag))
@@ -46,6 +48,7 @@ Settings.periods_in_year = 12
 
 #House selling and buying settings
 Settings.price_adjustment_frequency = 2
+Settings.price_adjustment = -0.05
 Settings.houses_surveyed = 4
 
 #tax settings
