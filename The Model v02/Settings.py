@@ -72,7 +72,7 @@ Settings.max_age = 109
 Settings.starting_interest = 0.01
 Settings.piti_multiplier = 0.28
 Settings.interest = 0.04
-Settings.loan_lenght = 30
+Settings.loan_length = 30
 
 #other settings
 Settings.random_seed = 1 #If equal to 0, seed is random
