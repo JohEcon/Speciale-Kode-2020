@@ -47,6 +47,7 @@ Settings.number_of_periods = 1000
 Settings.periods_in_year = 12
 
 #House selling and buying settings
+Settings.max_houses_checked = 30
 Settings.price_adjustment_frequency = 2
 Settings.price_adjustment = -0.05
 Settings.houses_surveyed = 4
@@ -75,6 +76,7 @@ Settings.interest = 0.04
 Settings.loan_length = 30
 
 #other settings
+Settings.utility_alpha = 0.5
 Settings.random_seed = 1 #If equal to 0, seed is random
 Settings.out_file = "Statistics.py"
 Settings.graphics_show = False

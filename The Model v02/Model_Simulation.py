@@ -220,7 +220,7 @@ class Household(Agent):
         self._houses_bought = 0
         self._loan = None
         self._equity = None
-        self._utility_alpha = random.uniform(0.3,0.8)
+        self._utility_alpha = Settings.utility_alpha
         if self._loan != None:
             self._disposable = pay_income_taxes(self._income) - self._loan.annuity
         else:
@@ -291,7 +291,7 @@ class Household(Agent):
 # We define hte household utility used for evaluating houses and for evaluating current house utility
     def household_utility(self, house):
         if house != self.house_owned:
-            annuity = Bank.get_annuity(Simulation.Banks.get_random_agent(), house.price - self.equity if self.equity != None else house.price)
+            annuity = Simulation.bank.get_annuity(house.price - self.equity if self.equity != None else house.price)
         if house == self.house_owned:
             if self.loan != None:
                 annuity = self.loan.annuity
@@ -391,12 +391,21 @@ class Household(Agent):
                     best_house = None
                     first = True
                     # Asking the bank how much the largest possible loan the household can get is (Budget constraint)
-                    self._max_budget = Bank.max_budget_household(Simulation.Banks.get_random_agent(), self)
+                    self._max_budget = Simulation.bank.max_budget_household(self)
 
-                    #Finding the best house given budget, agent can't buy their own house and agent wont move into a house worse than their current house
-                    houses_for_survey = random.sample(Statistics.houses_for_sale, Settings.houses_surveyed if Settings.houses_surveyed  <= len(Statistics.houses_for_sale) else len(Statistics.houses_for_sale))
-                    for n in houses_for_survey:
-                        if self._max_budget >= n.price and n != self.house_owned and self != n.seller:
+                    # Agents find up to 4 houses they can afford
+                    houses_checked = 0
+                    houses_in_survey = []
+                    while len(houses_in_survey) <= Settings.houses_surveyed and houses_checked < Settings.max_houses_checked:
+                        house_check = random.choice(Statistics.houses_for_sale)
+                        houses_checked += 1
+                        if house_check.price <= self._max_budget and houses_in_survey.count(house_check) < 1:
+                            houses_in_survey.append(house_check)
+                    print(houses_in_survey)
+
+                    #Agents find the best house out of the chosen ones
+                    for n in houses_in_survey:
+                        if n != self.house_owned and self != n.seller:
                             if first == True:
                                 best_house = n
                                 first = False
@@ -414,7 +423,7 @@ class Household(Agent):
                             self.loan.remove_this_agent()
 
                         # get loan for house
-                        Bank.get_loan(Simulation.Banks.get_random_agent(), best_house, self)
+                        Simulation.bank.get_loan(best_house, self)
 
                         # buy the best house found
                         self.communication(Communication.buy_house, best_house)
@@ -487,9 +496,9 @@ class Statistics(Agent):
             Statistics.outstanding_loans = []
 
         if id_event == Event.period_end:
-            Statistics.wealth = [h.wealth for h in Simulation.Households]
-            Statistics.income = [h.income for h in Simulation.Households]
-            Statistics.died_this_period = [h.died_this_period for h in Simulation.Households if h.died_this_period == True]
+            Statistics.wealth = [h.wealth for h in Simulation.households]
+            Statistics.income = [h.income for h in Simulation.households]
+            Statistics.died_this_period = [h.died_this_period for h in Simulation.households if h.died_this_period == True]
 
         if id_event == Event.stop:                    #2
             pass
@@ -505,34 +514,28 @@ class Simulation(Agent):
         super().__init__()
         # Initial allocation of all agents
         # Children of simulation:
-        Simulation.Banks = Agent(self)
-        Simulation.Houses = Agent(self)
+        Simulation.houses = Agent(self)
         self._statistics = Statistics(self)
         Simulation.bank = Bank(self)
-        Simulation.Households = Agent(self)
-
-        #slet dette
-        for _ in range(Settings.number_of_banks):
-            Bank(Simulation.Banks)
+        Simulation.households = Agent(self)
 
         for _ in range(Settings.number_of_agents):
-            Household(Simulation.Households)
+            Household(Simulation.households)
 
         for _ in range(Settings.number_of_houses):
-            Houses(Simulation.Houses)
+            Houses(Simulation.houses)
 
         # Start the simulation
         self.event_proc(Event.start)
 
     def event_proc(self, id_event):
-        if id_event == Event.start:  # 6
-            # Send Event.start down the tree to all decendants
-            super().event_proc(id_event)  # 7
+        if id_event == Event.start:
+            super().event_proc(id_event)
             # set houses for sale
-            for n in Simulation.Houses:
+            for n in Simulation.houses:
                 Statistics.houses_for_sale.append(n)
 
-            # The Event Pump: the actual simulation      #8
+            # The Event Pump
             while Simulation.time < Settings.number_of_periods:
                 self.event_proc(Event.period_start)
                 self.event_proc(Event.update)
@@ -543,17 +546,22 @@ class Simulation(Agent):
 
 
             # Stop the simulation
-            self.event_proc(Event.stop)  # 9
+            self.event_proc(Event.stop)
 
-        if id_event == Event.period_start:  # 10
+        if id_event == Event.period_start:
             # Adding new born persons to the population
             #lav evt. modellen mere stokastisk ved at føde et bestemt antal hver måned
             for _ in range(len(Statistics.died_this_period)):
-                    Household(Simulation.Households)
+                    Household(Simulation.households)
+
+            #make counter for number of deaths this period
+            Simulation.dead_this_period = 0
+            super().event_proc(id_event)
+
+        if id_event == Event.period_end:
             super().event_proc(id_event)
 
         else:
-            # All other events are sent to decendants
             super().event_proc(id_event)
 #We run the simulation
 
