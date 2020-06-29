@@ -59,6 +59,7 @@ Settings.arbejdsmarkedsbidrag = 0.08
 Settings.bundskat = 0.26 + 0.0075 + 0.1211
 Settings.topskat = 0.15
 Settings.skatteloft = 0.5206
+Settings.interest_tax = 0.25
 
 #income and age settings
 Settings.starting_income = 10000

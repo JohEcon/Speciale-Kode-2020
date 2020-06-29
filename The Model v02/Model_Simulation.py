@@ -48,9 +48,16 @@ class Loan(Agent):
     def owner(self):
         return self._owner
 
+    def interest_payment(self):
+        int_payment = self._interest/Settings.periods_in_year * self._principal
+        return int_payment
+
+    def annuity_after_tax(self):
+        after_tax = self.annuity - self.interest_payment() * Settings.interest_tax
+        return after_tax
+
     def pay_annuity(self):
-        interest_payment = self._interest/Settings.periods_in_year * self._principal
-        self._principal += -self._annuity + interest_payment
+        self._principal += -self._annuity + self.interest_payment()
         self._time_left += -1
         if self._time_left == 0:
             #print("Loan {} paid in full in period {}".format(self.get_id(), Simulation.time))
@@ -64,6 +71,20 @@ class Loan(Agent):
             print(repr(self))
 
 
+class Rent_unit(Agent):
+    def __init__(self, parent = None, quality = 0.05, annuity = 2500):
+        super().__init__(parent)
+        self._parent = parent
+        self._quality = quality
+        self._annuity = annuity
+
+    @property
+    def quality(self):
+        return self._quality
+
+    @property
+    def annuity(self):
+        return self._annuity
 
 class Houses(Agent):
     def __init__(self, parent = None, quality = 0, owner = None, price = 0, for_sale = True, seller = None):
@@ -116,7 +137,7 @@ class Houses(Agent):
             self._for_sale = True
             self._seller = seller
             self._periods_for_sale = 0
-            Statistics.houses_for_sale.append(self)
+            Simulation.houses_for_sale.append(self)
         else:
             pass
 
@@ -131,7 +152,7 @@ class Houses(Agent):
     def unlisting_house(self):
         self._periods_for_sale = 0
         self._for_sale = False
-        Statistics.houses_for_sale.remove(self)
+        Simulation.houses_for_sale.remove(self)
 
     def set_price(self, price):
         self._price = price
@@ -154,7 +175,6 @@ class Houses(Agent):
 
         if id_event == Event.stop:
             print(repr(self))
-
 
 class Bank(Agent):
     def __init__(self, parent = None, interest = Settings.interest):
@@ -186,7 +206,6 @@ class Bank(Agent):
         return annuity
 
     def get_loan(self, house, owner):
-        interest = Settings.interest
         if owner.equity != None:
             principal = house.price - owner.equity
         else:
@@ -205,14 +224,13 @@ class Bank(Agent):
 
 class Household(Agent):
 
-    def __init__(self, parent=None, wealth = 0, pdeath = 0, age = Settings.starting_age, house_owned = None, dead = False, died_this_period = False, moving = False, max_budget = 0):
+    def __init__(self, parent=None, wealth = 0, pdeath = 0, age = Settings.starting_age, house_owned = None, dead = False, moving = False, max_budget = 0):
         super().__init__(parent)
         self._wealth = wealth
         self._income = Settings.starting_income * (1 + numpy.random.normal(0, 0.1))
         self._age = age
         self._pdeath = pdeath
         self._dead = dead
-        self._died_this_period = died_this_period
         self._moving = moving
         self._house_owned = house_owned
         self._house_selling = None
@@ -284,11 +302,18 @@ class Household(Agent):
     def utility_alpha(self):
         return self._utility_alpha
 
-    @property
-    def died_this_period(self):
-        return self._died_this_period
 
-# We define hte household utility used for evaluating houses and for evaluating current house utility
+    def household_dies(self):
+        Simulation.dead_this_period += 1
+        self._dead = True
+        # remove loan
+        if self.loan != None:
+            self.loan.remove_this_agent()
+        # set house for sale
+        if self.house_owned != None:
+            self.house_owned.setting_for_sale(self)
+
+    # We define hte household utility used for evaluating houses and for evaluating current house utility
     def household_utility(self, house):
         if house != self.house_owned:
             annuity = Simulation.bank.get_annuity(house.price - self.equity if self.equity != None else house.price)
@@ -346,9 +371,6 @@ class Household(Agent):
             pass
 
         if id_event == Event.period_start:
-            if self._dead == True:
-                self._died_this_period = False
-
             if self._dead == True and self.house_owned == None:
                 self.remove_this_agent()
 
@@ -359,7 +381,7 @@ class Household(Agent):
                     self._equity = self.house_owned.price
 
             else:
-                pass
+                self._disposable = pay_income_taxes(self._income) - Simulation.rent_unit.annuity
 
         if id_event == Event.update:  # 2
             if self._dead == False:
@@ -397,11 +419,14 @@ class Household(Agent):
                     houses_checked = 0
                     houses_in_survey = []
                     while len(houses_in_survey) <= Settings.houses_surveyed and houses_checked < Settings.max_houses_checked:
-                        house_check = random.choice(Statistics.houses_for_sale)
-                        houses_checked += 1
-                        if house_check.price <= self._max_budget and houses_in_survey.count(house_check) < 1:
-                            houses_in_survey.append(house_check)
-                    print(houses_in_survey)
+                        if Simulation.houses_for_sale:
+                            house_check = random.choice(Simulation.houses_for_sale)
+                            houses_checked += 1
+                            if house_check.price <= self._max_budget and houses_in_survey.count(house_check) < 1:
+                                houses_in_survey.append(house_check)
+                        if not Simulation.houses_for_sale:
+                            break
+                        #print(houses_in_survey)
 
                     #Agents find the best house out of the chosen ones
                     for n in houses_in_survey:
@@ -434,14 +459,7 @@ class Household(Agent):
 
                 #check if agent dies
                 if random.uniform(0, 1) < self._pdeath:
-                    self._died_this_period = True
-                    self._dead = True
-                    #remove loan
-                    if self.loan != None:
-                        self.loan.remove_this_agent()
-                    # set house for sale
-                    if self.house_owned != None:
-                        self.house_owned.setting_for_sale(self)
+                    self.household_dies()
 
 
         if id_event == Event.update_year:
@@ -449,8 +467,6 @@ class Household(Agent):
                 # every year, increase age by 1 and update income
                 self._age += 1
                 self._pdeath = prop_death(self._age)
-                if self.died_this_period == 1:
-                    print(Simulation.time)
 
                 if self._age < Settings.retire_age:
                     self._income += dict_income_raise[get_index(self._age)]
@@ -468,52 +484,39 @@ class Household(Agent):
 
                 #if agent over max age, kill agent
                 if self._age > Settings.max_age:
-                    self._died_this_period = True
-                    self._dead = True
-                    #remove loan
-                    if self.loan != None:
-                        self.loan.remove_this_agent()
-                    # set house for sale
-                    if self.house_owned != None:
-                        self.house_owned.setting_for_sale(self)
+                    self.household_dies()
 
 
-        elif id_event == Event.stop:  # 3
+        elif id_event == Event.stop:
             if self._dead == False:
                 print(repr(self))
-
 
 class Statistics(Agent):
 
     def event_proc(self, id_event):
-        if id_event == Event.start:  #1
-            Statistics.died_this_period = []
+        if id_event == Event.start:
             Statistics.income = []
             Statistics.wealth = []
-
-            #flyt disses 2 under simulation
-            Statistics.houses_for_sale = []
-            Statistics.outstanding_loans = []
 
         if id_event == Event.period_end:
             Statistics.wealth = [h.wealth for h in Simulation.households]
             Statistics.income = [h.income for h in Simulation.households]
-            Statistics.died_this_period = [h.died_this_period for h in Simulation.households if h.died_this_period == True]
 
-        if id_event == Event.stop:                    #2
+        if id_event == Event.stop:
             pass
-
 
 class Simulation(Agent):
     # Static fields
     Households = Agent()
     time = 1
     bank = None
+    rent_unit = None
 
     def __init__(self):
         super().__init__()
         # Initial allocation of all agents
         # Children of simulation:
+        Simulation.rent_unit = Rent_unit(self)
         Simulation.houses = Agent(self)
         self._statistics = Statistics(self)
         Simulation.bank = Bank(self)
@@ -530,10 +533,12 @@ class Simulation(Agent):
 
     def event_proc(self, id_event):
         if id_event == Event.start:
+            Simulation.houses_for_sale = []
+            Simulation.outstanding_loans = []
             super().event_proc(id_event)
             # set houses for sale
             for n in Simulation.houses:
-                Statistics.houses_for_sale.append(n)
+                Simulation.houses_for_sale.append(n)
 
             # The Event Pump
             while Simulation.time < Settings.number_of_periods:
@@ -549,16 +554,15 @@ class Simulation(Agent):
             self.event_proc(Event.stop)
 
         if id_event == Event.period_start:
-            # Adding new born persons to the population
-            #lav evt. modellen mere stokastisk ved at føde et bestemt antal hver måned
-            for _ in range(len(Statistics.died_this_period)):
-                    Household(Simulation.households)
-
             #make counter for number of deaths this period
             Simulation.dead_this_period = 0
             super().event_proc(id_event)
 
         if id_event == Event.period_end:
+            # Adding new born persons to the population
+            for _ in range(Simulation.dead_this_period):
+                    Household(Simulation.households)
+                    print("agent added in {}".format(Simulation.time))
             super().event_proc(id_event)
 
         else:
