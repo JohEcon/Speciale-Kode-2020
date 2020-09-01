@@ -372,9 +372,17 @@ class Household(Agent):
         utility_1 = math.log10(income - Simulation.bank.get_annuity(house_price_1 - self.equity if self.equity != None else house_price_1)) * a + math.log10(test_value) * (1 - a)
         utility_2 = math.log10(income - Simulation.bank.get_annuity(house_price_2 - self.equity if self.equity != None else house_price_2)) * a + math.log10(test_value + inc) * (1 - a)
         utility_3 = math.log10(income - Simulation.bank.get_annuity(house_price_3 - self.equity if self.equity != None else house_price_3)) * a + math.log10(test_value - inc) * (1 - a)
+        if utility_1 >= utility_2 and utility_1 >= utility_3:
+            test_value = 0.5
+            q_max = test_value + range / 2
+            q_min = test_value - range / 2
+        if utility_2 >= utility_1 and utility_2 >= utility_3:
+            test_value = 0.5 + inc
+        if utility_3 >= utility_1 and utility_3 >= utility_2:
+            test_value = 0.5 - inc
 
-        q_max = test_value + range/2
-        q_min = test_value - range/2
+        p_max = local_mean_get_value(q_max, Statistics.sorted_house_q, Statistics.sorted_house_p)
+        p_min = local_mean_get_value(q_min, Statistics.sorted_house_q, Statistics.sorted_house_p)
         return q_max, q_min
 
 

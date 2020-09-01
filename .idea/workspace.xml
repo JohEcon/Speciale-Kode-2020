@@ -25,7 +25,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/The Model v02" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/1-copy.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -176,18 +176,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="923" y="367" key="#Inspections" timestamp="1589583464408">
+    <state x="1637" y="508" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598904529388">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="923" y="367" key="#Inspections/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589583464408" />
-    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590021365589">
-      <screen x="0" y="0" width="2560" height="1410" />
-    </state>
-    <state x="945" y="491" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590021365589" />
+    <state x="1637" y="508" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1598904529388" />
     <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592397421484">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1003" y="452" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1592397421484" />
+    <state x="1659" y="460" key="FileChooserDialogImpl" timestamp="1598905496566">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1659" y="460" key="FileChooserDialogImpl/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1598905496566" />
     <state width="1653" height="315" key="GridCell.Tab.0.bottom" timestamp="1596574653141">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -220,23 +220,14 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1675" height="300" key="GridCell.Tab.1.right/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1594596793613" />
-    <state x="759" y="327" key="SettingsEditor" timestamp="1589583515570">
+    <state x="848" y="484" width="1010" height="637" key="com.intellij.ide.util.TipDialog" timestamp="1598954916670">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="759" y="327" key="SettingsEditor/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1589583515570" />
-    <state x="848" y="484" width="1010" height="637" key="com.intellij.ide.util.TipDialog" timestamp="1596536456734">
-      <screen x="0" y="0" width="2560" height="1410" />
-    </state>
-    <state x="-1285" y="360" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1589449054456" />
-    <state x="848" y="484" width="1010" height="637" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1596536456734" />
+    <state x="848" y="484" width="1010" height="637" key="com.intellij.ide.util.TipDialog/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1598954916670" />
     <state x="757" y="238" width="917" height="972" key="dock-window-1" timestamp="1590966164444">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="757" y="238" width="917" height="972" key="dock-window-1/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590966164444" />
-    <state x="1273" y="0" width="1294" height="1417" key="dock-window-2" timestamp="1590013121235">
-      <screen x="0" y="0" width="2560" height="1410" />
-    </state>
-    <state x="1273" y="0" width="1294" height="1417" key="dock-window-2/0.0.2560.1410/-1920.0.1920.1050@0.0.2560.1410" timestamp="1590013121235" />
     <state x="1128" y="248" width="747" height="909" key="find.popup" timestamp="1591216721413">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
