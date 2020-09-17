@@ -139,11 +139,12 @@ dict_move = {
 
 # List of age specific retirement propabilities
 dict_retire = {
-    range(0, 74):0.00,
-    range(75, 79):0.005,
-    range(80, 84):0.005,
-    range(85, 89):0.01,
-    range(90, 110):0.01
+    range(0, 67): 0.0,
+    range(67, 74): 0.0000833,
+    range(75, 79): 0.00052349,
+    range(80, 84): 0.00094507,
+    range(85, 89): 0.00173338,
+    range(90, 110):0.00485965
     }
 
 # list of age dependent income increases INDKP106
